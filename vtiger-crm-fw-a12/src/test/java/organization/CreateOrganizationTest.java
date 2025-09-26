@@ -33,7 +33,7 @@ public class CreateOrganizationTest {
 		
 //		Filling data to the form
 		WebElement orgField = driver.findElement(By.name("accountname"));
-		String orgName = "automationWithPiyush01";
+		String orgName = "automationWithAnu";
 		orgField.sendKeys(orgName);
 		
 		Thread.sleep(3000);
