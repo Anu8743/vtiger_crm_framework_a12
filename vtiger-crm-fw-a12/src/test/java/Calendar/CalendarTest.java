@@ -16,12 +16,12 @@ public class CalendarTest {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		
-		driver.get("http://localhost:8888/");
+		driver.get("http://49.249.28.218:8888/");
 //		login
 		WebElement username = driver.findElement(By.name("user_name"));
 		username.sendKeys("admin");
 		WebElement password = driver.findElement(By.name("user_password"));
-		password.sendKeys("manager");
+		password.sendKeys("admin");
 		
 		driver.findElement(By.id("submitButton")).click();
 		

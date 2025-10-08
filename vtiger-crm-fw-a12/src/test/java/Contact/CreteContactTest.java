@@ -1,7 +1,16 @@
 package Contact;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,20 +18,54 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 public class CreteContactTest {
-	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
+	public static void main(String[] args) throws InterruptedException, EncryptedDocumentException, IOException {
+//		get the java represention object of the physical file 
+		FileInputStream fis = new FileInputStream("./src/test/resources/CommonData.properties");
+		
+//		use the load() of properties class to load all the keys value 
+		Properties pObj = new Properties();
+		pObj.load(fis);
+	
+//		use the getproperty(key) and pass the key and you will get string value 
+		String BROWSER=pObj.getProperty("bro");
+		String URL = pObj.getProperty("url");
+		String USERNAME = pObj.getProperty("un");
+		String PASSWORD = pObj.getProperty("pwd");
+		
+//		PRINT
+		System.out.println(BROWSER);
+		System.out.println(URL);
+		System.out.println(USERNAME);
+		System.out.println(PASSWORD);
+		
+//		How to create execlflie
+		
+		FileInputStream fisExcel = new FileInputStream("./src/test/resources/testScriptData.xlsx");
+
+		Workbook wb = WorkbookFactory.create(fisExcel);
+
+		Sheet sh = wb.getSheet("LastName");
+
+		Row row = sh.getRow(13);
+
+		Cell cell = row.getCell(0);
+
+		String LastName = cell.getStringCellValue()+ (int)(Math.random()*1000);
+
+		System.out.println(LastName);		
+
 //		Open Browser 
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
 //		Login
-		driver.get("http://localhost:8888/");
+		driver.get(URL);
 
 		WebElement username = driver.findElement(By.name("user_name"));
-		username.sendKeys("admin");
+		username.sendKeys(USERNAME);
 		WebElement password = driver.findElement(By.name("user_password"));
-		password.sendKeys("manager");
+		password.sendKeys(PASSWORD);
 
 		driver.findElement(By.id("submitButton")).click();
 		Thread.sleep(3000);
@@ -33,8 +76,8 @@ public class CreteContactTest {
 
 //		Filling data to the form
 		WebElement lastnameField = driver.findElement(By.name("lastname"));
-		String ContLastname = "Singh";
-		lastnameField.sendKeys(ContLastname);
+//		String ContLastname = "Singh";
+		lastnameField.sendKeys(LastName);
 		Thread.sleep(3000);
   
 //		save button
@@ -43,8 +86,8 @@ public class CreteContactTest {
 //		Verification
 		String contects = driver.findElement(By.id("dtlview_Last Name")).getText();
 		
-		if (contects.equals(ContLastname)) {
-			System.out.println("Created Contact "+ ContLastname +"successfully!!!!");
+		if (contects.equals(LastName)) {
+			System.out.println("Created Contact "+ LastName +"successfully!!!!");
 		}else {
 			System.out.println("Failed....");
 		}
