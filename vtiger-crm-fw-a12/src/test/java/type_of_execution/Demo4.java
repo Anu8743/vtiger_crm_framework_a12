@@ -1,0 +1,34 @@
+package type_of_execution;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class Demo4 {
+	
+	@Parameters("bro")
+	@Test
+	public void case4(String Browser) throws InterruptedException, IOException {
+		WebDriver driver = null;
+
+//		String Browser = new FileUtility().getDataFromPropertiesFile("bro");
+		
+		if (Browser.equals("chrome")) {
+			driver = new ChromeDriver();
+		}else if (Browser.equals("edge")) {
+			//jab browser nhi chale toh ye karna hai
+			System.setProperty("webdriver.edge.driver", "./resources/msedgedriver.exe");
+			driver = new EdgeDriver();
+		}else if (Browser.equals("firefox")) {
+			driver = new FirefoxDriver();
+		}
+		
+		Thread.sleep(5000);
+		driver.quit();
+	}
+}
