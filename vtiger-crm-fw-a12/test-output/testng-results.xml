@@ -1,54 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="2" total="6" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-14T14:20:41 IST" name="Suite" finished-at="2025-10-14T14:21:01 IST" duration-ms="20062">
+  <suite started-at="2025-10-15T00:49:52 IST" name="Suite" finished-at="2025-10-15T00:50:05 IST" duration-ms="12535">
     <groups>
+      <group name="reg">
+        <method signature="Demo6.case61()[pri:0, instance:type_of_execution.Demo6@26d9b808]" name="case61" class="type_of_execution.Demo6"/>
+        <method signature="Demo6.case62()[pri:0, instance:type_of_execution.Demo6@26d9b808]" name="case62" class="type_of_execution.Demo6"/>
+        <method signature="Demo7.case71()[pri:0, instance:type_of_execution.Demo7@71ba6d4e]" name="case71" class="type_of_execution.Demo7"/>
+        <method signature="Demo7.case72()[pri:0, instance:type_of_execution.Demo7@71ba6d4e]" name="case72" class="type_of_execution.Demo7"/>
+      </group> <!-- reg -->
     </groups>
-    <test started-at="2025-10-14T14:20:41 IST" name="Test2" finished-at="2025-10-14T14:20:54 IST" duration-ms="13189">
-      <class name="type_of_execution.Demo4">
-        <test-method signature="case4(java.lang.String)[pri:0, instance:type_of_execution.Demo4@451001e5]" started-at="2025-10-14T14:20:41 IST" name="case4" finished-at="2025-10-14T14:20:54 IST" duration-ms="13106" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[edge]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2025-10-15T00:49:52 IST" name="Test" finished-at="2025-10-15T00:50:05 IST" duration-ms="12535">
+      <class name="type_of_execution.Demo7">
+        <test-method signature="case71()[pri:0, instance:type_of_execution.Demo7@71ba6d4e]" started-at="2025-10-15T00:49:52 IST" name="case71" finished-at="2025-10-15T00:49:56 IST" duration-ms="3826" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- case4 -->
-      </class> <!-- type_of_execution.Demo4 -->
-    </test> <!-- Test2 -->
-    <test started-at="2025-10-14T14:20:41 IST" name="Test1" finished-at="2025-10-14T14:20:55 IST" duration-ms="13444">
-      <class name="type_of_execution.Demo3">
-        <test-method signature="case4(java.lang.String)[pri:0, instance:type_of_execution.Demo3@6e9175d8]" started-at="2025-10-14T14:20:41 IST" name="case4" finished-at="2025-10-14T14:20:55 IST" duration-ms="13367" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- case71 -->
+        <test-method signature="case72()[pri:0, instance:type_of_execution.Demo7@71ba6d4e]" started-at="2025-10-15T00:49:56 IST" name="case72" finished-at="2025-10-15T00:49:59 IST" duration-ms="3077" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- case4 -->
-      </class> <!-- type_of_execution.Demo3 -->
-    </test> <!-- Test1 -->
-    <test started-at="2025-10-14T14:20:41 IST" name="Test3" finished-at="2025-10-14T14:21:01 IST" duration-ms="20057">
-      <class name="type_of_execution.Demo5">
-        <test-method signature="case4(java.lang.String)[pri:0, instance:type_of_execution.Demo5@4d1c005e]" started-at="2025-10-14T14:20:41 IST" name="case4" finished-at="2025-10-14T14:21:01 IST" duration-ms="19994" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- case72 -->
+      </class> <!-- type_of_execution.Demo7 -->
+      <class name="type_of_execution.Demo6">
+        <test-method signature="case61()[pri:0, instance:type_of_execution.Demo6@26d9b808]" started-at="2025-10-15T00:49:59 IST" name="case61" finished-at="2025-10-15T00:50:02 IST" duration-ms="2665" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- case4 -->
-      </class> <!-- type_of_execution.Demo5 -->
-    </test> <!-- Test3 -->
+        </test-method> <!-- case61 -->
+        <test-method signature="case62()[pri:0, instance:type_of_execution.Demo6@26d9b808]" started-at="2025-10-15T00:50:02 IST" name="case62" finished-at="2025-10-15T00:50:05 IST" duration-ms="2906" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- case62 -->
+      </class> <!-- type_of_execution.Demo6 -->
+    </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
